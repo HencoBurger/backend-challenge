@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "e0e114e3-e736-4649-9049-aac96cabb379",
+		"name": "Backend challenge",
+		"schema":
+			"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/ping",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["ping"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get fields",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/fields",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["fields"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New field",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw":
+						"{\n    \"type\": \"text\",\n    \"name\": \"firstName\",\n    \"required\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/fields",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["fields"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update field",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw":
+						"{\n    \"type\": \"text\",\n    \"name\": \"firstName\",\n    \"required\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/fields/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["fields", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post form",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw":
+						"{\n  \"firstName\": \"Torben\",\n  \"lastName\": \"Sko\",\n  \"dob\": \"1985-04-02\",\n  \"email\": \"torben.sko@nextpracticehealth.com\",\n  \"emergencyContact\": {\n    \"firstName\": \"Jye\",\n    \"lastName\": \"Lewis\",\n    \"email\": \"jye.lewis@nextpracticehealth.com\"\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/forms",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["forms"]
+				}
+			},
+			"response": []
+		}
+	]
+}
